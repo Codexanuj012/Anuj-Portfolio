@@ -160,7 +160,7 @@ const testimonials = [
   {
      testimonial:
      "Anuj is a dedicated and quick learner with strong full-stack development skills. I encourage him to keep improving his DSA, build impactful projects, and continue learning consistently.",
-    name: "Abhishek Kusahwaha",
+    name: "Abhishek Kushawaha",
     designation: "Software Development Engineer",
     company: "Accenture",
     image: abhishek,
@@ -179,9 +179,9 @@ const testimonials = [
   {
   testimonial:
     "Anuj demonstrates strong analytical thinking and a keen eye for data-driven problem solving. With continued practice in SQL, Power BI, and data visualization, he has the potential to excel as a Data Analyst.",
-  name: "Priya Singh",
+  name: "Priya",
   designation: "Data Analyst",
-  company: "Infosys",
+  company: "Novopay",
   image: "",
 
   },

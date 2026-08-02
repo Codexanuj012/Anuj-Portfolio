@@ -5,7 +5,7 @@ import { FaGithub, FaCode, FaLaptopCode } from "react-icons/fa";
 const stats = [
   {
     icon: <SiLeetcode size={40} />,
-    value: "25+",
+    value: "92+",
     title: "LeetCode Problems",
     link: "https://leetcode.com/u/Codex_Anuj/",
   },
