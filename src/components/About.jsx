@@ -1,58 +1,48 @@
 import React from "react";
-import Tilt from "react-tilt";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
-import { fadeIn, textVariant } from "../utils/motion";
-
-const ServiceCard = ({ index, title, icon }) => (
-  <Tilt className='xs:w-[250px] w-full'>
-    <motion.div
-      variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
-    >
-      <div
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
-      >
-        <img
-          src={icon}
-          alt='web-development'
-          className='w-16 h-16 object-contain'
-        />
-
-        <h3 className='text-white text-[20px] font-bold text-center'>
-          {title}
-        </h3>
-      </div>
-    </motion.div>
-  </Tilt>
-);
 
 const About = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <div>
         <p className={styles.sectionSubText}>Introduction</p>
         <h2 className={styles.sectionHeadText}>Overview.</h2>
-      </motion.div>
+      </div>
 
-      <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
-        className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
-      >
-        I'm a Computer Science student passionate about Web & Full Stack Development, Data Analysis, and building modern web applications. I enjoy solving real-world problems and continuously learning new technologies.
-      </motion.p>
+      <p className="mt-4 max-w-3xl text-secondary text-[16px] leading-7">
+        I'm a Computer Science student passionate about Web & Full Stack
+        Development, Data Analysis, and building modern web applications.
+        I enjoy solving real-world problems and continuously learning
+        new technologies.
+      </p>
 
-      <div className='mt-20 flex flex-wrap gap-10'>
-        {services.map((service, index) => (
-          <ServiceCard key={service.title} index={index} {...service} />
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {services.map((service) => (
+          <motion.div
+            key={service.title}
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.2 }}
+            className="flex min-h-[130px] items-center gap-4
+              rounded-xl border border-white/10 bg-tertiary
+              p-5 hover:border-[#915EFF] transition-colors"
+          >
+            <img
+              src={service.icon}
+              alt={service.title}
+              loading="lazy"
+              className="h-12 w-12 shrink-0 object-contain"
+            />
+
+            <h3 className="text-white text-base font-semibold">
+              {service.title}
+            </h3>
+          </motion.div>
         ))}
       </div>
     </>
